@@ -85,7 +85,7 @@
                   <td class="font-weight-bold">
                     {{ $t('date') | uppercase }}
                   </td>
-                  <td>{{ purchaseOrder.date | dateFormat('DD MMMM YYYY') }}</td>
+                  <td>{{ purchaseOrder.form.date | dateFormat('DD MMMM YYYY') }}</td>
                 </tr>
                 <tr v-if="purchaseOrder.purchase_request">
                   <td class="font-weight-bold">

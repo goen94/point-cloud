@@ -77,7 +77,7 @@
                   <td class="font-weight-bold">
                     {{ $t('date') | uppercase }}
                   </td>
-                  <td>{{ purchasePaymentOrder.date | dateFormat('DD MMMM YYYY') }}</td>
+                  <td>{{ purchasePaymentOrder.form.date | dateFormat('DD MMMM YYYY') }}</td>
                 </tr>
                 <tr>
                   <td

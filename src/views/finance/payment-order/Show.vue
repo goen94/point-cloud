@@ -166,7 +166,7 @@
                   <td class="font-weight-bold">
                     {{ $t('required date') | uppercase }}
                   </td>
-                  <td>{{ paymentOrder.date | dateFormat('DD MMMM YYYY') }}</td>
+                  <td>{{ paymentOrder.form.date | dateFormat('DD MMMM YYYY') }}</td>
                 </tr>
                 <tr>
                   <td class="font-weight-bold">
