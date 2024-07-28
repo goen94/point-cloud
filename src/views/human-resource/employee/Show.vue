@@ -217,6 +217,19 @@
                     </td>
                   </tr>
                   <tr>
+                    <td><span class="font-w700">{{ $t('contract reviewer') | titlecase }}</span></td>
+                    <td>
+                      <ul>
+                        <li
+                          v-for="(reviewer, index) in employee.reviewers"
+                          :key="index"
+                        >
+                          {{ reviewer.first_name | titlecase }} {{ reviewer.last_name | titlecase }}
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
                     <td><span class="font-w700">{{ $t('salary history') | titlecase }}</span></td>
                     <td>
                       <ul>
