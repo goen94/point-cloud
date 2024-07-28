@@ -416,6 +416,40 @@
                 </p-table>
               </div>
             </p-form-row>
+            <p-form-row
+              id="scorer"
+              :label="$t('employee reviewer')"
+            >
+              <div
+                slot="body"
+                class="col-lg-9"
+              >
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary mb-15"
+                  :disabled="isSaving"
+                  @click="$refs.reviewerModal.open()"
+                >
+                  <i class="fa fa-plus" /> {{ $t('employee reviewer') | titlecase }}
+                </button>
+                <p-table>
+                  <tr slot="p-head" />
+                  <tr
+                    v-for="(reviewer, index) in form.reviewers"
+                    slot="p-body"
+                    :key="index"
+                  >
+                    <td>{{ reviewer.name }}</td>
+                    <td class="text-right">
+                      <i
+                        class="fa fa-close"
+                        @click="removeReviewer(index)"
+                      />
+                    </td>
+                  </tr>
+                </p-table>
+              </div>
+            </p-form-row>
 
             <p-form-row
               id="salary"
@@ -684,6 +718,13 @@
       @add="onSubmitScorer"
     />
 
+    <reviewer-modal
+      id="reviewer"
+      ref="reviewerModal"
+      title="Reviewer"
+      @add="onSubmitReviewer"
+    />
+
     <upload-modal
       id="file"
       ref="uploadModal"
@@ -705,9 +746,11 @@ import SalaryModal from '@/views/human-resource/employee/modal/SalaryModal'
 import ScorerModal from '@/views/human-resource/employee/modal/ScorerModal'
 import UploadModal from '@/views/human-resource/employee/modal/UploadModal'
 import { mapGetters, mapActions } from 'vuex'
+import ReviewerModal from '@/views/human-resource/employee/modal/ReviewerModal.vue'
 
 export default {
   components: {
+    ReviewerModal,
     SocialMediaModal,
     ContractModal,
     SalaryModal,
@@ -764,7 +807,8 @@ export default {
         contracts: [],
         salary_histories: [],
         scorers: [],
-        attachments: []
+        attachments: [],
+        reviewers: []
       })
     }
   },
@@ -881,6 +925,13 @@ export default {
     },
     removeScorer (index) {
       this.form.scorers.splice(index, 1)
+    },
+    onSubmitReviewer (data) {
+      this.form.reviewers.push(data)
+      this.$refs.reviewerModal.close()
+    },
+    removeReviewer (index) {
+      this.form.reviewers.splice(index, 1)
     },
     updateNotes (cloudStorage) {
       this.updateCloudStorage({
