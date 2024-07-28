@@ -580,5 +580,6 @@
 	"select asset": "pilih aset",
 	"check again": "periksa kembali",
 	"please download here": "download disini, link akan expired setelah 24 jam",
-	"cutoff form warning": "periksa kembali data anda sebelum klik submit"
+	"cutoff form warning": "periksa kembali data anda sebelum klik submit",
+	"reminder date exceeds contract date": "Tanggal reminder melewati tanggal kontrak"
 }

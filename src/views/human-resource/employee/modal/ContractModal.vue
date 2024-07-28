@@ -111,6 +111,14 @@ export default {
       this.$emit('close')
     },
     onSubmitContract () {
+      const dueDate = new Date(this.contract_due_date)
+      const endDate = new Date(this.contract_end)
+
+      if (dueDate > endDate) {
+        this.$notification.error(this.$t('reminder date exceeds contract date'))
+        return
+      }
+
       this.$emit('add', {
         contract_begin: this.contract_begin,
         contract_end: this.contract_end,
