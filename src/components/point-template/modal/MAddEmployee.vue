@@ -405,6 +405,7 @@
                   >
                     <td>{{ contract.contract_begin | dateFormat('DD MMM YYYY') }}</td>
                     <td>{{ contract.contract_end | dateFormat('DD MMM YYYY') }}</td>
+                    <td>{{ contract.contract_due_date | dateFormat('DD MMM YYYY') }}</td>
                     <td>{{ contract.notes }}</td>
                     <td class="text-right">
                       <i
