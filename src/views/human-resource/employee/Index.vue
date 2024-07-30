@@ -110,6 +110,7 @@
               <th>{{ $t('name') }}</th>
               <th>{{ $t('job title') }}</th>
               <th>{{ $t('department') }}</th>
+              <th>{{ $t('status contract') }}</th>
             </tr>
             <template v-for="(employee, index) in employees">
               <tr
@@ -148,6 +149,11 @@
                 <td>
                   <template v-if="employee.group">
                     {{ employee.group.name }}
+                  </template>
+                </td>
+                <td>
+                  <template v-if="employee.status">
+                    <span>{{ employee.status.name }}</span>
                   </template>
                 </td>
               </tr>
