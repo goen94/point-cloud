@@ -391,7 +391,7 @@
                 <button
                   type="button"
                   class="btn btn-sm btn-secondary mb-15"
-                  :disabled="isSaving"
+                  :disabled="isSaving || form.employee_status_id == 4"
                   @click="$refs.contractModal.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('contract period') | titlecase }}
@@ -416,6 +416,17 @@
                 </p-table>
               </div>
             </p-form-row>
+
+            <p-form-row
+              v-if="form.employee_status_id == 4"
+              id="reason_ended_contract"
+              v-model="form.reason_ended_contract"
+              :disabled="isSaving || form.employee_status_id != 4"
+              :label="$t('reason ended contract')"
+              name="reason_ended_contract"
+              :errors="form.errors.get('reason_ended_contract')"
+              @errors="form.errors.set('reason_ended_contract', null)"
+            />
 
             <p-form-row
               id="salary"
@@ -754,7 +765,7 @@ export default {
         join_date: '',
         resign_date: '',
         code: '',
-        status: '',
+        employee_status_id: '',
         job_location: '',
         daily_transport_allowance: 0,
         functional_allowance: 0,
@@ -766,7 +777,8 @@ export default {
         contracts: [],
         salary_histories: [],
         scorers: [],
-        attachments: []
+        attachments: [],
+        reason_ended_contract: ''
       })
     }
   },
@@ -902,6 +914,7 @@ export default {
         this.form.salary_histories = this.employee.salary_histories
         this.form.scorers = this.employee.scorers
         this.form.user_id = this.employee.user_id
+        this.form.reason_ended_contract = this.employee.reason_ended_contract
         // this.form.attachments = this.employee.attachments
         // this.form.attachments = this.employee.attachments.forEach(attachment => {
         // })
