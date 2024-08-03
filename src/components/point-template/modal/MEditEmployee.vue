@@ -363,7 +363,7 @@
                   id="status"
                   v-model="form.employee_status_id"
                   name="status"
-                  :options="statusList"
+                  :options="filteredStatusList"
                   :errors="form.errors.get('employee_status_id')"
                   @errors="form.errors.set('employee_status_id', null)"
                 />
@@ -791,7 +791,11 @@ export default {
     ...mapGetters('humanResourceEmployeeJobLocation', ['jobLocationList']),
     ...mapGetters('humanResourceEmployeeGroup', ['groupList']),
     ...mapGetters('masterUser', ['userList']),
-    ...mapGetters('cloudStorage', ['cloudStorages', 'pagination'])
+    ...mapGetters('cloudStorage', ['cloudStorages', 'pagination']),
+
+    filteredStatusList () {
+      return this.statusList.filter(status => status.id === 3 || status.id === 4)
+    }
   },
   created () {
     this.getReligions()
