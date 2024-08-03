@@ -195,6 +195,7 @@ export default {
     PointTable
   },
   data () {
+    const statusId = parseInt(this.$route.query.statusId, 10)
     return {
       isLoading: false,
       searchText: this.$route.query.search,
@@ -202,7 +203,7 @@ export default {
       lastPage: 1,
       isAdvanceFilter: false,
       checkedRow: [],
-      statusId: null,
+      statusId: statusId >= 1 && statusId <= 4 ? statusId : null,
       statusLabel: null
     }
   },
@@ -330,7 +331,7 @@ export default {
           },
           limit: 10,
           page: this.page,
-          is_archived: this.statusId,
+          status: this.statusId,
           sort_by: 'name',
           includes: 'scorers',
           additional: 'groups'
