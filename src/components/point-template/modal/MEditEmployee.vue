@@ -1021,10 +1021,14 @@ export default {
       })
       this.update(this.form)
         .then(response => {
+          const employeeStatusId = this.form.employee_status_id
           this.isSaving = false
           this.$notification.success('update success')
           Object.assign(this.$data, this.$options.data.call(this))
           this.$emit('updated', response.data)
+          if (employeeStatusId === '3' || employeeStatusId === '4') {
+            this.$router.push({ name: 'EmployeeIndex', query: { statusId: employeeStatusId } })
+          }
           this.close()
         }).catch(error => {
           this.isSaving = false
