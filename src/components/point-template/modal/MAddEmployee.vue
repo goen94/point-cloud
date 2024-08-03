@@ -759,6 +759,7 @@ export default {
     UploadModal
   },
   data () {
+    const baseURL = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}`
     return {
       isSaving: false,
       isLoading: false,
@@ -809,7 +810,8 @@ export default {
         salary_histories: [],
         scorers: [],
         attachments: [],
-        reviewers: []
+        reviewers: [],
+        due_date_callback_url: `${baseURL}/human-resource/employee/`
       })
     }
   },
