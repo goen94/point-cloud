@@ -25,7 +25,7 @@
   "contract" : "kontrak",
   "contract begin" : "mulai kontrak",
   "contract end" : "akhir kontrak",
-  "contract due date" : "jatuh tempo kontrak",
+  "due date reminder contract" : "jatuh tempo kontrak",
   "salary history" : "riwayat gaji",
   "salary date" : "tanggal perubahan gaji",
   "salary" : "jumlah gaji",

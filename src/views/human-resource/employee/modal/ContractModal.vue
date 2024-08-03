@@ -42,7 +42,7 @@
 
         <p-form-row
           id="due-date"
-          :label="$t('contract due date')"
+          :label="$t('due date reminder contract')"
         >
           <div
             slot="body"
