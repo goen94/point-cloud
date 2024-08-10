@@ -62,10 +62,8 @@ export default {
     return {
       searchText: '',
       options: [
-        { id: 1, label: 'active' },
-        { id: 2, label: 'archive' },
-        { id: 3, label: 'on going contract' },
-        { id: 4, label: 'end contract' }
+        { id: 1, label: 'on going contract' },
+        { id: 2, label: 'end contract' }
       ],
       mutableId: this.value,
       mutableLabel: this.label,
