@@ -2,9 +2,9 @@
   <div>
     <sweet-modal
       ref="modal"
-      width="100%"
       :title="$t('employee information') | uppercase"
       overlay-theme="dark"
+      width="100%"
       @close="onClose()"
     >
       <form @submit.prevent="onSubmit">
@@ -15,39 +15,39 @@
               ref="name"
               v-model="form.name"
               :disabled="isSaving"
+              :errors="form.errors.get('name')"
               :label="$t('name')"
               name="name"
-              :errors="form.errors.get('name')"
               @errors="form.errors.set('name', null)"
             />
 
             <p-form-row
               id="personal-identity"
               v-model="form.personal_identity"
-              name="personal-identity"
-              :label="$t('personal id')"
               :disabled="isSaving"
               :errors="form.errors.get('personal_identity')"
+              :label="$t('personal id')"
+              name="personal-identity"
               @errors="form.errors.set('personal_identity', null)"
             />
 
             <p-form-row
               id="tax_identification_number"
               v-model="form.tax_identification_number"
-              name="tax_identification_number"
-              :label="$t('npwp')"
               :disabled="isSaving"
               :errors="form.errors.get('tax_identification_number')"
+              :label="$t('npwp')"
+              name="tax_identification_number"
               @errors="form.errors.set('tax_identification_number', null)"
             />
 
             <p-form-row
               id="bpjs"
               v-model="form.bpjs"
-              name="bpjs"
-              :label="$t('bpjs')"
               :disabled="isSaving"
               :errors="form.errors.get('bpjs')"
+              :label="$t('bpjs')"
+              name="bpjs"
               @errors="form.errors.set('bpjs', null)"
             />
 
@@ -55,9 +55,9 @@
               id="email"
               v-model="form.emails[0].email"
               :disabled="isSaving"
+              :errors="form.errors.get('email')"
               :label="$t('email')"
               name="email"
-              :errors="form.errors.get('email')"
               @errors="form.errors.set('email', null)"
             />
 
@@ -65,13 +65,13 @@
               id="address"
               v-model="form.addresses[0].address"
               :disabled="isSaving"
-              :label="$t('address')"
+              :errors="form.errors.get('address')"
               :icon="'fa-plus'"
               :icon-event="isAdditionalAddress"
+              :label="$t('address')"
               name="address"
-              :errors="form.errors.get('address')"
-              @handleEvent="handleEvent($event)"
               @errors="form.errors.set('address', null)"
+              @handleEvent="handleEvent($event)"
             />
 
             <p-form-row
@@ -79,8 +79,8 @@
               id="address"
               v-model="form.addresses[1].address"
               :disabled="isSaving"
-              name="address"
               :errors="form.errors.get('address')"
+              name="address"
               @errors="form.errors.set('address', null)"
             />
 
@@ -88,26 +88,26 @@
               id="phone"
               v-model="form.phones[0].number"
               :disabled="isSaving"
+              :errors="form.errors.get('phone')"
               :label="$t('phone')"
               name="phone"
-              :errors="form.errors.get('phone')"
               @errors="form.errors.set('phone', null)"
             />
 
             <p-form-row
               id="last-education"
               v-model="form.last_education"
-              name="last-education"
-              :label="$t('last education')"
               :disabled="isSaving"
               :errors="form.errors.get('last_education')"
+              :label="$t('last education')"
+              name="last-education"
               @errors="form.errors.set('last_education', null)"
             />
 
             <p-form-row
               id="birth-date"
-              name="birth-date"
               :label="$t('birth date')"
+              name="birth-date"
             >
               <div
                 slot="body"
@@ -116,9 +116,9 @@
                 <p-date-picker
                   id="birth-date"
                   v-model="form.birth_date"
-                  name="birth-date"
-                  label="Birth Date"
                   :errors="form.errors.get('birth_date')"
+                  label="Birth Date"
+                  name="birth-date"
                   @errors="form.errors.set('birth_date', null)"
                 />
               </div>
@@ -127,10 +127,10 @@
             <p-form-row
               id="birth-place"
               v-model="form.birth_place"
-              name="birth-place"
-              :label="$t('birth place')"
               :disabled="isSaving"
               :errors="form.errors.get('birth_place')"
+              :label="$t('birth place')"
+              name="birth-place"
               @errors="form.errors.set('birth_place', null)"
             />
 
@@ -143,9 +143,9 @@
                 class="col-lg-9"
               >
                 <button
-                  type="button"
-                  class="btn btn-sm btn-secondary mb-15"
                   :disabled="isSaving"
+                  class="btn btn-sm btn-secondary mb-15"
+                  type="button"
                   @click="$refs.socialMedia.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('social media') | titlecase }}
@@ -154,8 +154,8 @@
                   <tr slot="p-head" />
                   <tr
                     v-for="(socialMedia, index) in form.social_media"
-                    slot="p-body"
                     :key="socialMedia.index"
+                    slot="p-body"
                   >
                     <td>{{ socialMedia.type }}</td>
                     <td width="100%">
@@ -173,8 +173,8 @@
             </p-form-row>
             <p-form-row
               id="gender"
-              name="gender"
               :label="$t('gender')"
+              name="gender"
             >
               <div
                 slot="body"
@@ -183,10 +183,10 @@
                 <p-select
                   id="gender"
                   v-model="form.employee_gender_id"
-                  name="gender"
                   :disabled="isSaving"
-                  :options="genderList"
                   :errors="form.errors.get('employee_gender_id')"
+                  :options="genderList"
+                  name="gender"
                   @errors="form.errors.set('employee_gender_id', null)"
                 />
               </div>
@@ -194,8 +194,8 @@
 
             <p-form-row
               id="marital-status"
-              name="marital-status"
               :label="$t('marital status')"
+              name="marital-status"
             >
               <div
                 slot="body"
@@ -204,9 +204,9 @@
                 <p-select
                   id="marital-status"
                   v-model="form.employee_marital_status_id"
-                  name="maritalStatus"
-                  :options="maritalStatusList"
                   :errors="form.errors.get('employee_marital_status_id')"
+                  :options="maritalStatusList"
+                  name="maritalStatus"
                   @errors="form.errors.set('employee_marital_status_id', null)"
                 />
               </div>
@@ -216,17 +216,17 @@
               v-if="form.employee_marital_status_id == 2"
               id="married-with"
               v-model="form.married_with"
-              name="married-with"
-              :label="$t('married with')"
               :disabled="isSaving"
               :errors="form.errors.get('married_with')"
+              :label="$t('married with')"
+              name="married-with"
               @errors="form.errors.set('married_with', null)"
             />
 
             <p-form-row
               id="religion"
-              name="religion"
               :label="$t('religion')"
+              name="religion"
             >
               <div
                 slot="body"
@@ -235,9 +235,9 @@
                 <p-select
                   id="religion"
                   v-model="form.employee_religion_id"
-                  name="religion"
-                  :options="religionList"
                   :errors="form.errors.get('employee_religion_id')"
+                  :options="religionList"
+                  name="religion"
                   @errors="form.errors.set('employee_religion_id', null)"
                 />
               </div>
@@ -249,8 +249,8 @@
             <hr>
             <p-form-row
               id="group"
-              name="group"
               :label="$t('department')"
+              name="group"
             >
               <div
                 slot="body"
@@ -259,9 +259,9 @@
                 <p-select
                   id="employee-group"
                   v-model="form.employee_group_id"
-                  name="employee-group"
-                  :options="groupList"
                   :errors="form.errors.get('employee_group_id')"
+                  :options="groupList"
+                  name="employee-group"
                   @errors="form.errors.set('employee_group_id', null)"
                 />
               </div>
@@ -270,27 +270,27 @@
             <p-form-row
               id="code"
               v-model="form.code"
-              name="code"
-              :label="$t('employee code')"
               :disabled="isSaving"
               :errors="form.errors.get('code')"
+              :label="$t('employee code')"
+              name="code"
               @errors="form.errors.set('code', null)"
             />
 
             <p-form-row
               id="job-title"
               v-model="form.job_title"
-              name="job-title"
-              :label="$t('job title')"
               :disabled="isSaving"
               :errors="form.errors.get('job_title')"
+              :label="$t('job title')"
+              name="job-title"
               @errors="form.errors.set('job_title', null)"
             />
 
             <p-form-row
               id="job-location"
-              name="job-location"
               :label="$t('job location')"
+              name="job-location"
             >
               <div
                 slot="body"
@@ -299,9 +299,9 @@
                 <p-select
                   id="job-location"
                   v-model="form.employee_job_location_id"
-                  name="employee-job-location"
-                  :options="jobLocationList"
                   :errors="form.errors.get('employee_job_location_id')"
+                  :options="jobLocationList"
+                  name="employee-job-location"
                   @errors="form.errors.set('employee_job_location_id', null)"
                 />
               </div>
@@ -309,8 +309,8 @@
 
             <p-form-row
               id="join-date"
-              name="join-date"
               :label="$t('join date')"
+              name="join-date"
             >
               <div
                 slot="body"
@@ -319,10 +319,10 @@
                 <p-date-picker
                   id="join-date"
                   v-model="form.join_date"
-                  name="join-date"
-                  label="join date"
-                  type="date"
                   :errors="form.errors.get('join_date')"
+                  label="join date"
+                  name="join-date"
+                  type="date"
                   @errors="form.errors.set('join_date', null)"
                 />
               </div>
@@ -331,8 +331,8 @@
             <!-- Resign Date -->
             <p-form-row
               id="resign-date"
-              name="resign-date"
               :label="$t('resign date')"
+              name="resign-date"
             >
               <div
                 slot="body"
@@ -341,10 +341,10 @@
                 <p-date-picker
                   id="resign-date"
                   v-model="form.resign_date"
-                  name="resign-date"
-                  label="resign date"
-                  type="date"
                   :errors="form.errors.get('resign_date')"
+                  label="resign date"
+                  name="resign-date"
+                  type="date"
                   @errors="form.errors.set('resign_date', null)"
                 />
               </div>
@@ -352,8 +352,8 @@
 
             <p-form-row
               id="status"
-              name="status"
               :label="$t('status')"
+              name="status"
             >
               <div
                 slot="body"
@@ -362,9 +362,9 @@
                 <p-select
                   id="status"
                   v-model="form.employee_status_id"
-                  name="status"
-                  :options="statusList"
                   :errors="form.errors.get('employee_status_id')"
+                  :options="statusList"
+                  name="status"
                   @errors="form.errors.set('employee_status_id', null)"
                 />
               </div>
@@ -374,9 +374,9 @@
               id="company_email"
               v-model="form.company_emails[0].email"
               :disabled="isSaving"
+              :errors="form.errors.get('company_email')"
               :label="$t('company email')"
               name="company_email"
-              :errors="form.errors.get('company_email')"
               @errors="form.errors.set('company_email', null)"
             />
 
@@ -389,9 +389,9 @@
                 class="col-lg-9"
               >
                 <button
-                  type="button"
+                  :disabled="isSaving || form.employee_status_id == 2"
                   class="btn btn-sm btn-secondary mb-15"
-                  :disabled="isSaving"
+                  type="button"
                   @click="$refs.contractModal.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('contract period') | titlecase }}
@@ -400,8 +400,8 @@
                   <tr slot="p-head" />
                   <tr
                     v-for="(contract, index) in form.contracts"
-                    slot="p-body"
                     :key="contract.index"
+                    slot="p-body"
                   >
                     <td>{{ contract.contract_begin | dateFormat('DD MMM YYYY') }}</td>
                     <td>{{ contract.contract_end | dateFormat('DD MMM YYYY') }}</td>
@@ -418,7 +418,7 @@
               </div>
             </p-form-row>
             <p-form-row
-              id="scorer"
+              id="reviewer"
               :label="$t('employee reviewer')"
             >
               <div
@@ -426,9 +426,9 @@
                 class="col-lg-9"
               >
                 <button
-                  type="button"
-                  class="btn btn-sm btn-secondary mb-15"
                   :disabled="isSaving"
+                  class="btn btn-sm btn-secondary mb-15"
+                  type="button"
                   @click="$refs.reviewerModal.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('employee reviewer') | titlecase }}
@@ -437,8 +437,8 @@
                   <tr slot="p-head" />
                   <tr
                     v-for="(reviewer, index) in form.reviewers"
-                    slot="p-body"
                     :key="index"
+                    slot="p-body"
                   >
                     <td>{{ reviewer.name }}</td>
                     <td class="text-right">
@@ -453,6 +453,17 @@
             </p-form-row>
 
             <p-form-row
+              v-if="form.employee_status_id == 2"
+              id="reason_ended_contract"
+              v-model="form.reason_ended_contract"
+              :disabled="isSaving || form.employee_status_id != 2"
+              :errors="form.errors.get('reason_ended_contract')"
+              :label="$t('reason ended contract')"
+              name="reason_ended_contract"
+              @errors="form.errors.set('reason_ended_contract', null)"
+            />
+
+            <p-form-row
               id="salary"
               :label="$t('salary history')"
             >
@@ -461,9 +472,9 @@
                 class="col-lg-9"
               >
                 <button
-                  type="button"
-                  class="btn btn-sm btn-secondary mb-15"
                   :disabled="isSaving"
+                  class="btn btn-sm btn-secondary mb-15"
+                  type="button"
                   @click="$refs.salaryModal.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('salary history') | titlecase }}
@@ -472,8 +483,8 @@
                   <tr slot="p-head" />
                   <tr
                     v-for="(salary, index) in form.salary_histories"
-                    slot="p-body"
                     :key="salary.index"
+                    slot="p-body"
                   >
                     <td>{{ salary.date | dateFormat('DD MMM YYYY') }}</td>
                     <td>{{ salary.salary | numberFormat }}</td>
@@ -496,9 +507,9 @@
                 class="col-lg-9"
               >
                 <button
-                  type="button"
-                  class="btn btn-sm btn-secondary mb-15"
                   :disabled="isSaving"
+                  class="btn btn-sm btn-secondary mb-15"
+                  type="button"
                   @click="$refs.scorerModal.open()"
                 >
                   <i class="fa fa-plus" /> {{ $t('employee assessor') | titlecase }}
@@ -507,8 +518,8 @@
                   <tr slot="p-head" />
                   <tr
                     v-for="(scorer, index) in form.scorers"
-                    slot="p-body"
                     :key="index"
+                    slot="p-body"
                   >
                     <td>{{ scorer.name }}</td>
                     <td class="text-right">
@@ -523,8 +534,8 @@
             </p-form-row>
             <p-form-row
               id="user-account"
-              name="user-account"
               :label="$t('user account')"
+              name="user-account"
             >
               <div
                 slot="body"
@@ -533,9 +544,9 @@
                 <p-select
                   id="user-account"
                   v-model="form.user_id"
-                  name="user-account"
-                  :options="userList"
                   :errors="form.errors.get('user_id')"
+                  :options="userList"
+                  name="user-account"
                   @errors="form.errors.set('user_id', null)"
                 />
               </div>
@@ -545,8 +556,8 @@
             <hr>
             <p-form-row
               id="daily-transport-allowance"
-              name="daily-transport-allowance"
               :label="$t('transport allowance (daily)')"
+              name="daily-transport-allowance"
             >
               <div
                 slot="body"
@@ -555,8 +566,8 @@
                 <p-form-number
                   v-model="form.daily_transport_allowance"
                   :disabled="isSaving"
-                  :is-text-right="false"
                   :errors="form.errors.get('daily_transport_allowance')"
+                  :is-text-right="false"
                   @errors="form.errors.set('daily_transport_allowance', null)"
                 />
               </div>
@@ -564,8 +575,8 @@
 
             <p-form-row
               id="functional-allowance"
-              name="functional-allowance"
               :label="$t('functional allowance (monthly)')"
+              name="functional-allowance"
             >
               <div
                 slot="body"
@@ -574,8 +585,8 @@
                 <p-form-number
                   v-model="form.functional_allowance"
                   :disabled="isSaving"
-                  :is-text-right="false"
                   :errors="form.errors.get('functional_allowance')"
+                  :is-text-right="false"
                   @errors="form.errors.set('functional_allowance', null)"
                 />
               </div>
@@ -583,8 +594,8 @@
 
             <p-form-row
               id="communication-allowance"
-              name="communication-allowance"
               :label="$t('communication allowance (monthly)')"
+              name="communication-allowance"
             >
               <div
                 slot="body"
@@ -593,8 +604,8 @@
                 <p-form-number
                   v-model="form.communication_allowance"
                   :disabled="isSaving"
-                  :is-text-right="false"
                   :errors="form.errors.get('communication_allowance')"
+                  :is-text-right="false"
                   @errors="form.errors.set('communication_allowance', null)"
                 />
               </div>
@@ -605,9 +616,9 @@
       <h5>{{ $t('attachment') | uppercase }}</h5>
       <hr>
       <button
-        type="button"
-        class="btn btn-sm btn-outline-primary"
         :disabled="isSaving"
+        class="btn btn-sm btn-outline-primary"
+        type="button"
         @click="$refs.uploadModal.open()"
       >
         <i class="fa fa-plus" /> {{ $t('upload') | uppercase }}
@@ -623,13 +634,13 @@
             <div class="card block-rounded block-link-shadow text-center">
               <div
                 v-if="cloudStorage.preview"
-                class="block-content block-content-full bg-image"
                 :style="'background-image: url(' + cloudStorage.preview + '); height: 130px'"
+                class="block-content block-content-full bg-image"
               />
               <div
                 v-else
-                class="block-content block-content-full bg-image"
                 :style="'height: 130px'"
+                class="block-content block-content-full bg-image"
               />
               <div
                 class="block-content block-content-full block-content-sm"
@@ -645,21 +656,21 @@
                   v-if="editIndex == index"
                   :ref="'notes-'+index"
                   v-model="cloudStorage.notes"
-                  type="text"
                   class="form-control"
+                  type="text"
                 >
               </div>
               <div class="p-10">
                 <a
                   v-if="editIndex != index"
-                  href="javascript:void(0)"
                   class="mr-15 btn btn-sm btn-outline-primary"
+                  href="javascript:void(0)"
                   @click="editIndex = index"
                 ><i class="fa fa-pencil" /></a>
                 <a
                   v-if="editIndex == index"
-                  href="javascript:void(0)"
                   class="mr-15 btn btn-sm btn-outline-primary"
+                  href="javascript:void(0)"
                   @click="updateNotes(cloudStorage)"
                 >{{ $t('update') | uppercase }}</a>
                 <a
@@ -667,8 +678,8 @@
                   class="mr-15 btn btn-sm btn-outline-primary"
                 ><i class="fa fa-download" /></a>
                 <a
-                  href="javascript:void(0)"
                   class="btn btn-sm btn-outline-danger"
+                  href="javascript:void(0)"
                   @click="deleteAttachment(cloudStorage.id, cloudStorage.key)"
                 ><i class="fa fa-trash" /></a>
               </div>
@@ -678,9 +689,9 @@
       </p-block-inner>
       <div class="pull-right">
         <button
-          type="submit"
-          class="btn btn-sm btn-primary"
           :disabled="isSaving"
+          class="btn btn-sm btn-primary"
+          type="submit"
           @click="onSubmit"
         >
           <i
@@ -729,11 +740,11 @@
     <upload-modal
       id="file"
       ref="uploadModal"
-      title="Upload"
-      form-ref="uploadForm"
-      feature="employee"
-      :is-user-protected="true"
       :expiration-day="0"
+      :is-user-protected="true"
+      feature="employee"
+      form-ref="uploadForm"
+      title="Upload"
       @uploaded="attachmentUploaded"
     />
   </div>
@@ -746,7 +757,7 @@ import ContractModal from '@/views/human-resource/employee/modal/ContractModal'
 import SalaryModal from '@/views/human-resource/employee/modal/SalaryModal'
 import ScorerModal from '@/views/human-resource/employee/modal/ScorerModal'
 import UploadModal from '@/views/human-resource/employee/modal/UploadModal'
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import ReviewerModal from '@/views/human-resource/employee/modal/ReviewerModal.vue'
 
 export default {
@@ -811,7 +822,8 @@ export default {
         scorers: [],
         attachments: [],
         reviewers: [],
-        due_date_callback_url: `${baseURL}/human-resource/employee/`
+        due_date_callback_url: `${baseURL}/human-resource/employee/`,
+        reason_ended_contract: ''
       })
     }
   },
@@ -1001,10 +1013,14 @@ export default {
       })
       this.create(this.form)
         .then(response => {
+          const employeeStatusId = this.form.employee_status_id
+          const path = `/human-resource/employee?statusId=${employeeStatusId}`
           this.isSaving = false
           this.$notification.success('create success')
           Object.assign(this.$data, this.$options.data.call(this))
           this.$emit('added', response.data)
+          const url = new URL(path, window.location.origin)
+          window.location.href = url.toString()
           this.close()
         }).catch(error => {
           this.isSaving = false
@@ -1030,7 +1046,7 @@ export default {
 </script>
 
 <style>
-  h2 {
-    line-height: 3;
-  }
+h2 {
+  line-height: 3;
+}
 </style>
