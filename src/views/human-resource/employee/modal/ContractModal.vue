@@ -41,6 +41,21 @@
         </p-form-row>
 
         <p-form-row
+          id="due-date"
+          :label="$t('due date reminder contract')"
+        >
+          <div
+            slot="body"
+            class="col-lg-9"
+          >
+            <p-date-picker
+              v-model="contract_due_date"
+              name="due-date"
+            />
+          </div>
+        </p-form-row>
+
+        <p-form-row
           id="notes"
           v-model="notes"
           name="notes"
@@ -76,6 +91,7 @@ export default {
     return {
       contract_begin: '',
       contract_end: '',
+      contract_due_date: '',
       notes: null
     }
   },
@@ -95,9 +111,18 @@ export default {
       this.$emit('close')
     },
     onSubmitContract () {
+      const dueDate = new Date(this.contract_due_date)
+      const endDate = new Date(this.contract_end)
+
+      if (dueDate > endDate) {
+        this.$notification.error(this.$t('reminder date exceeds contract date'))
+        return
+      }
+
       this.$emit('add', {
         contract_begin: this.contract_begin,
         contract_end: this.contract_end,
+        contract_due_date: this.contract_due_date,
         notes: this.notes
       })
       this.contract = ''

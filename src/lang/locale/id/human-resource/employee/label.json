@@ -9,6 +9,7 @@
   "phone" : "telepon",
   "email" : "email",
   "company email" : "email perusahaan",
+  "reason ended contract" : "alasan kontrak berakhir",
   "add social media" : "tambah media social",
   "social media" : "media social",
   "last education" : "pendidikan terakhir",
@@ -24,6 +25,7 @@
   "contract" : "kontrak",
   "contract begin" : "mulai kontrak",
   "contract end" : "akhir kontrak",
+  "due date reminder contract" : "jatuh tempo kontrak",
   "salary history" : "riwayat gaji",
   "salary date" : "tanggal perubahan gaji",
   "salary" : "jumlah gaji",
@@ -41,6 +43,7 @@
   "kpi" : "kpi",
   "employee assessment" : "penilaian kpi",
   "employee assessor" : "penilai kpi",
+  "employee reviewer": "penilai karyawan",
   "assessment category" : "kategori penilaian",
   "assessment period" : "periode penilaian",
   "no" : "no",
@@ -92,5 +95,6 @@
   "wa daily report": "nilai pelaporan wa harian",
   "amount received difference": "selisih nilai yang diterima",
   "if kpi 100%": "jika kpi 100%",
-  "allowance": "allowance"
+  "allowance": "allowance",
+  "reminder date exceeds contract date": "Tanggal reminder melewati tanggal kontrak"
 }

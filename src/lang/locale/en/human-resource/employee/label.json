@@ -9,6 +9,7 @@
   "phone" : "phone",
   "email" : "email",
   "company email" : "company email",
+  "reason ended contract" : "reason ended contract",
   "add social media" : "add social media",
   "social media" : "social media",
   "last education" : "last education",
@@ -24,6 +25,7 @@
   "contract" : "contract",
   "contract begin" : "contract begin",
   "contract end" : "contract end",
+  "due date reminder contract" : "due date reminder contract",
   "salary history" : "salary history",
   "salary date" : "salary date",
   "salary" : "salary",
@@ -41,6 +43,7 @@
   "kpi" : "kpi",
   "employee assessment" : "assessment",
   "employee assessor" : "employee assessor",
+  "employee reviewer" : "employee reviewer",
   "assessment category" : "assessment category",
   "assessment period" : "assessment period",
   "no" : "no",
@@ -92,5 +95,6 @@
   "wa daily report": "wa daily report",
   "amount received difference": "amount received difference",
   "if kpi 100%": "if kpi 100%",
-  "allowance": "allowance"
+  "allowance": "allowance",
+  "reminder date exceeds contract date": "reminder date exceeds contract date"
 }

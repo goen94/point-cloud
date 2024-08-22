@@ -12,8 +12,8 @@
         <div class="input-group block mb-5">
           <a
             v-if="$permission.has('create employee')"
-            href="javascript:void(0)"
             class="input-group-prepend"
+            href="javascript:void(0)"
             @click="$refs.addEmployee.open()"
           >
             <span class="input-group-text">
@@ -23,10 +23,10 @@
           <p-form-input
             id="search-text"
             ref="searchText"
+            :value="searchText"
+            class="btn-block"
             name="search-text"
             placeholder="Search"
-            class="btn-block"
-            :value="searchText"
             @input="filterSearch"
           />
         </div>
@@ -41,16 +41,16 @@
         </div>
         <div
           v-show="isAdvanceFilter"
-          class="card"
           :class="{ 'fadeIn': isAdvanceFilter }"
+          class="card"
         >
           <div class="row">
             <div class="col-sm-3 text-center">
               <p-form-row
                 id="status"
-                name="status"
-                :label="$t('status')"
                 :is-horizontal="false"
+                :label="$t('status')"
+                name="status"
               >
                 <div slot="body">
                   <span
@@ -70,22 +70,22 @@
           class="mr-15 animated fadeIn"
         >
           <button
-            type="button"
             class="btn btn-secondary mr-5"
+            type="button"
             @click="bulkArchiveEmployee()"
           >
             {{ $t('archive') | uppercase }}
           </button>
           <button
-            type="button"
             class="btn btn-secondary mr-5"
+            type="button"
             @click="bulkActivateEmployee()"
           >
             {{ $t('activate') | uppercase }}
           </button>
           <button
-            type="button"
             class="btn btn-secondary"
+            type="button"
             @click="bulkDeleteEmployee()"
           >
             {{ $t('delete') | uppercase }}
@@ -100,16 +100,17 @@
               <th width="50px">
                 <p-form-check-box
                   id="subscibe"
-                  name="subscibe"
-                  :is-form="false"
                   :checked="isRowsChecked(employees, checkedRow)"
+                  :is-form="false"
                   class="text-center"
+                  name="subscibe"
                   @click.native="toggleCheckRows()"
                 />
               </th>
               <th>{{ $t('name') }}</th>
               <th>{{ $t('job title') }}</th>
               <th>{{ $t('department') }}</th>
+              <th>{{ $t('status contract') }}</th>
             </tr>
             <template v-for="(employee, index) in employees">
               <tr
@@ -132,10 +133,10 @@
                 <td>
                   <p-form-check-box
                     id="subscibe"
-                    :is-form="false"
-                    name="subscibe"
                     :checked="isRowChecked(employee.id)"
+                    :is-form="false"
                     class="text-center"
+                    name="subscibe"
                     @click.native="toggleCheckRow(employee.id)"
                   />
                 </td>
@@ -148,6 +149,11 @@
                 <td>
                   <template v-if="employee.group">
                     {{ employee.group.name }}
+                  </template>
+                </td>
+                <td>
+                  <template v-if="employee.status">
+                    <span>{{ employee.status.name }}</span>
                   </template>
                 </td>
               </tr>
@@ -179,7 +185,7 @@ import Breadcrumb from '@/views/Breadcrumb'
 import BreadcrumbHumanResource from '@/views/human-resource/Breadcrumb'
 import PointTable from 'point-table-vue'
 import debounce from 'lodash/debounce'
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -189,6 +195,7 @@ export default {
     PointTable
   },
   data () {
+    const statusId = parseInt(this.$route.query.statusId, 10)
     return {
       isLoading: false,
       searchText: this.$route.query.search,
@@ -196,7 +203,7 @@ export default {
       lastPage: 1,
       isAdvanceFilter: false,
       checkedRow: [],
-      statusId: null,
+      statusId: statusId >= 1 && statusId <= 2 ? statusId : null,
       statusLabel: null
     }
   },
@@ -324,7 +331,7 @@ export default {
           },
           limit: 10,
           page: this.page,
-          is_archived: this.statusId,
+          status: this.statusId,
           sort_by: 'name',
           includes: 'scorers',
           additional: 'groups'

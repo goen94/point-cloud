@@ -79,7 +79,7 @@
 	"form status": "form status",
 	"form number": "nomor form",
 	"request approval": "request approval",
-	"request approval all": "request approval all",	
+	"request approval all": "request approval all",
 	"approval status": "approval status",
 	"select form approval status": "select form approval status",
 	"select form status": "select form status",
@@ -424,6 +424,7 @@
 	"email receipient": "receipient",
 	"email body": "message",
 	"company email": "email perusahaan",
+	"reason ended contract" : "alasan kontrak berakhir",
 	"add social media": "tambah media social",
 	"social media": "media social",
 	"last education": "pendidikan terakhir",
@@ -439,6 +440,8 @@
 	"contract": "kontrak",
 	"contract begin": "mulai kontrak",
 	"contract end": "akhir kontrak",
+	"contract end": "akhir kontrak",
+	"due date reminder contract" : "jatuh tempo kontrak",
 	"salary history": "riwayat gaji",
 	"salary date": "tanggal perubahan gaji",
 	"salary": "jumlah gaji",
@@ -456,6 +459,7 @@
 	"kpi": "kpi",
 	"employee assessment": "penilaian kpi",
 	"employee assessor": "penilai kpi",
+	"employee reviewer": "penilai karyawan",
 	"assessment category": "kategori penilaian",
 	"assessment period": "periode penilaian",
 	"no": "no",
@@ -510,9 +514,9 @@
 	"fixed asset": "aset tetap",
 	"add fixed asset": "tambah aset tetap",
 	"edit fixed asset": "ubah aset tetap",
-	"fixed asset group": "grup aset tetap",	
-	"add fixed asset group": "tambah grup aset tetap",	
-	"edit fixed asset group": "ubah grup aset tetap",	
+	"fixed asset group": "grup aset tetap",
+	"add fixed asset group": "tambah grup aset tetap",
+	"edit fixed asset group": "ubah grup aset tetap",
 	"create fixed asset helper - chart of account": "Pilih akun jurnal untuk aset ini, sehingga semua jurnal yang terjadi saat pembelian, penjuallan dan penggunaan barang akan otomatis terjurnal pada akun yang dipilih",
 	"fixed asset account": "Akun aset",
 	"fixed asset depreciation account": "akun penyusutan",
@@ -562,7 +566,7 @@
 	"unlink": "putuskan",
 	"data has been saved": "data berhasil disimpan",
 	"access topics library here": "lihat daftar topik disini",
-	
+
 	"asset": "aset",
 	"purchase date": "tanggal pembelian",
 	"acquisition cost": "harga perolehan",
@@ -577,5 +581,6 @@
 	"select asset": "pilih aset",
 	"check again": "periksa kembali",
 	"please download here": "download disini, link akan expired setelah 24 jam",
-	"cutoff form warning": "periksa kembali data anda sebelum klik submit"
+	"cutoff form warning": "periksa kembali data anda sebelum klik submit",
+	"reminder date exceeds contract date": "Tanggal reminder melewati tanggal kontrak"
 }
