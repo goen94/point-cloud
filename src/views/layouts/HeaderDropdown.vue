@@ -41,7 +41,7 @@
 
       <a
         class="dropdown-item"
-        href="https://app.bluecatforms.com/mNe5NnPr/new-form"
+        href="https://wa.me/+628113399578"
         target="_blank"
       >
         <i class="fa fa-bug" /> Bug Report
@@ -49,7 +49,7 @@
 
       <a
         class="dropdown-item"
-        href="https://pointdocumentation.gitbook.io/point-erp"
+        href="https://pointhub.gitbook.io/pointhub-documentation"
         target="_blank"
       >
         <i class="fa fa-book" /> Documentation
