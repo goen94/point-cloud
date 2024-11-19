@@ -5,8 +5,8 @@
     <div class="content py-20 font-size-xs clearfix">
       <div class="float-right">
         <div>
-          <div>
-            <a href="button" class="btn btn-sm">
+          <div style="position: relative;">
+            <a href="button" class="btn btn-success btn-sm" style="width: 24px; position: fixed; bottom: 12px; right:12px;">
               <img src="/whatsapp.png" alt="">
               Contact Us
             </a>
