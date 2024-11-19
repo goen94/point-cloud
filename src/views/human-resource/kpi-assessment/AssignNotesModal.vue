@@ -16,7 +16,7 @@
               <textarea
                 v-model="notes"
                 class="form-control mt-2"
-                rows="3"
+                rows="20"
                 :readonly="!isUser(employee_user_id) || isdetail"
               />
             </template>
