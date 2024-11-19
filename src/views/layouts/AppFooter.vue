@@ -6,7 +6,7 @@
       <div class="float-right">
         <div>
           <div style="position: relative;">
-            <a href="button" class="btn btn-success btn-sm" style="height: 32px; border-radius: 20px; position: fixed; bottom: 12px; right:12px;">
+            <a href="https://wa.me/+628113399578" class="btn btn-success btn-sm" style="height: 32px; border-radius: 20px; position: fixed; bottom: 12px; right:12px;">
               <img src="/whatsapp.png" alt="" style="width: 24px; height: 24px;">
               Contact Us
             </a>
