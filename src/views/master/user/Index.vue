@@ -203,7 +203,7 @@ export default {
         this.isLoading = false
         this.users = response.data
         this.page = response.meta.current_page
-        this.lastPage = response.meta.last_name
+        this.lastPage = response.meta.last_page
       }).catch(error => {
         this.isLoading = false
         this.$notifications.error(error)
