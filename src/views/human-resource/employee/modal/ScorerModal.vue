@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -75,10 +76,10 @@ export default {
     },
     searchText: debounce(function () {
       this.search()
-    }, 300),
+    }, 300)
   },
   created () {
-    this.get({ params: { limit: 99999 }})
+    this.get({ params: { limit: 99999 } })
   },
   methods: {
     ...mapActions('masterUser', ['get']),
