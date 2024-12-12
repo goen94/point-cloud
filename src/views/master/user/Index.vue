@@ -184,7 +184,7 @@ export default {
     },
     getUserRequest () {
       this.isLoading = true
-      this.users = this.getUser({
+      this.getUser({
         params: {
           limit: 10,
           sort_by: 'name',
@@ -201,6 +201,7 @@ export default {
         }
       }).then(response => {
         this.isLoading = false
+        this.users = response.data
       }).catch(error => {
         this.isLoading = false
         this.$notifications.error(error)
