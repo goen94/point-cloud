@@ -202,7 +202,7 @@ export default {
       }).then(response => {
         this.isLoading = false
         this.users = response.data
-        this.page = response.meta.page
+        this.page = response.meta.current_page
         this.lastPage = response.meta.last_name
       }).catch(error => {
         this.isLoading = false
