@@ -88,6 +88,12 @@
               </td>
             </tr>
           </point-table>
+          <br />
+          <p-pagination
+            :current-page="page"
+            :last-page="lastPage"
+            @updatePage="updatePage"
+          />
           <template v-if="userInvitations.length > 0">
             <p-separator />
             <h5>{{ $t('pending invitation') | uppercase }}</h5>
@@ -118,11 +124,6 @@
             </point-table>
           </template>
         </p-block-inner>
-        <p-pagination
-          :current-page="page"
-          :last-page="lastPage"
-          @updatePage="updatePage"
-        />
       </p-block>
     </div>
     <m-add-user
