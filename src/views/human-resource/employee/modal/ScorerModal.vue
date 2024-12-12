@@ -22,8 +22,9 @@
           </h3>
         </div>
         <div v-else class="list-group mb-20">
-          <template v-for="(user, index) in options" :key="index">
+          <template v-for="(user, index) in options">
             <a
+              :key="index"
               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
               href="javascript:void(0)"
               @click="onSubmitScorer(user, index)"
