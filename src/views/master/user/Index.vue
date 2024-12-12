@@ -156,6 +156,7 @@ export default {
   },
   data () {
     return {
+      users: [],
       isLoading: true,
       searchText: this.$route.query.search,
       page: this.$route.query.page * 1 || 1,
@@ -164,7 +165,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('masterUser', ['users']),
     ...mapGetters('masterUserInvitation', ['userInvitations'])
   },
   created () {
@@ -184,7 +184,7 @@ export default {
     },
     getUserRequest () {
       this.isLoading = true
-      this.getUser({
+      this.users = this.getUser({
         params: {
           limit: 10,
           sort_by: 'name',
