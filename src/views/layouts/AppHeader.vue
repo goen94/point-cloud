@@ -50,14 +50,9 @@
         <a
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
+          class="btn mx-10 -mt-2"
         >
-          <button
-            type="button"
-            class="btn btn-rounded btn-dual-secondary !py-0 !px-2"
-            @click="toggle"
-          >
-            <i class="fa fa-2x fa-info-circle " />
-          </button>
+          <i class="fa fa-2x fa-info-circle " />
         </a>
 
         <notification-dropdown />

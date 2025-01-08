@@ -4,13 +4,13 @@
     class="btn-group"
     role="group"
   >
-    <button
-      type="button"
-      class="btn btn-rounded btn-dual-secondary !py-0 !px-2"
+    <a
+      href="javascript:void(0)"
+      class="btn mx-10 -mt-2"
       @click="toggle"
     >
       <i class="fa fa-2x fa-bell" />
-    </button>
+    </a>
     <div
       class="dropdown-menu dropdown-menu-right min-width-300"
       :class="{'show': show}"
