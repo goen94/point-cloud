@@ -47,14 +47,6 @@
         <i class="fa fa-bug" /> Bug Report
       </a>
 
-      <a
-        class="dropdown-item"
-        href="https://pointhub.gitbook.io/pointhub-documentation"
-        target="_blank"
-      >
-        <i class="fa fa-book" /> Documentation
-      </a>
-
       <div class="dropdown-divider" />
       <a
         class="dropdown-item"

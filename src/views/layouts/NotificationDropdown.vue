@@ -6,11 +6,10 @@
   >
     <button
       type="button"
-      class="btn btn-rounded btn-dual-secondary"
+      class="btn btn-rounded btn-dual-secondary py-0! px-2!"
       @click="toggle"
     >
-      <i class="fa fa-bell mr-5" />
-      <!-- <span class="badge badge-danger badge-pill">1</span> -->
+      <i class="fa fa-2x fa-bell" />
     </button>
     <div
       class="dropdown-menu dropdown-menu-right min-width-300"
