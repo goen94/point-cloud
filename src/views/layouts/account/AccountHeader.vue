@@ -34,6 +34,14 @@
 
       <!-- Right Section -->
       <div class="content-header-section">
+        <a
+          href="https://pointhub.gitbook.io/pointhub-documentation"
+          target="_blank"
+          class="btn text-black"
+          style="margin-top: -10px"
+        >
+          <i class="fa fa-2x fa-info-circle " />
+        </a>
         <notification-dropdown />
         <header-dropdown />
       </div>
