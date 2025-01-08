@@ -51,7 +51,13 @@
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
         >
-          <i class="fa fa-circle-info" />
+          <button
+            type="button"
+            class="btn btn-rounded btn-dual-secondary"
+            @click="toggle"
+          >
+            <i class="fa fa-info-circle " />
+          </button>
         </a>
 
         <notification-dropdown />
