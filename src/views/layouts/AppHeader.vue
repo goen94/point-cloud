@@ -50,7 +50,8 @@
         <a
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
-          class="btn mx-10 -mt-2"
+          class="btn text-black"
+          style="margin-top: -10px"
         >
           <i class="fa fa-2x fa-info-circle " />
         </a>

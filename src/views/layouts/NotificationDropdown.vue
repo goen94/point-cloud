@@ -6,7 +6,8 @@
   >
     <a
       href="javascript:void(0)"
-      class="btn mx-10 -mt-2"
+      class="btn text-black"
+      style="margin-top: -10px"
       @click="toggle"
     >
       <i class="fa fa-2x fa-bell" />
