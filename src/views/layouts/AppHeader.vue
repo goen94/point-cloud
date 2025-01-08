@@ -53,7 +53,7 @@
         >
           <button
             type="button"
-            class="btn btn-rounded btn-dual-secondary py-0! px-2!"
+            class="btn btn-rounded btn-dual-secondary !py-0 !px-2"
             @click="toggle"
           >
             <i class="fa fa-2x fa-info-circle " />
