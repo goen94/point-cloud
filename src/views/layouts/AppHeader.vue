@@ -47,6 +47,13 @@
 
       <!-- Right Section -->
       <div class="content-header-section">
+        <a
+          href="https://pointhub.gitbook.io/pointhub-documentation"
+          target="_blank"
+        >
+          <i class="fa fa-circle-info" />
+        </a>
+
         <notification-dropdown />
 
         <header-dropdown />
