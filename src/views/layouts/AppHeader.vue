@@ -29,7 +29,7 @@
           <i class="fa fa-navicon" />
         </button>
 
-        <span class="font-w600 hidden lg:block">{{ tenantName | uppercase }}</span>
+        <span class="font-w600 d-lg-none">{{ tenantName | uppercase }}</span>
         <!-- END Toggle Sidebar -->
 
         <!-- Open Search Section -->
