@@ -10,7 +10,7 @@
       style="margin-top: -4px; padding: 8px !important"
       @click="toggle"
     >
-      <i class="fa text-[18px] fa-bell" />
+      <i class="fa fa-bell" style="font-size: 18px;" />
     </a>
     <div
       class="dropdown-menu dropdown-menu-right min-width-300"
