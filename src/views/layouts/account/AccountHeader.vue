@@ -38,7 +38,7 @@
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
           class="btn text-black"
-          style="margin-top: -5px; padding: 8px !important"
+          style="margin-top: -6px; padding: 8px !important"
         >
           <i class="fa fa-info-circle " style="font-size: 20px;" />
         </a>

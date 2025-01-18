@@ -29,7 +29,7 @@
           <i class="fa fa-navicon" />
         </button>
 
-        <span class="font-w600 d-lg-none">{{ tenantName | uppercase }}</span>
+        <span class="font-w600 tenant">{{ tenantName | uppercase }}</span>
         <!-- END Toggle Sidebar -->
 
         <!-- Open Search Section -->
@@ -51,7 +51,7 @@
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
           class="btn text-black"
-          style="margin-top: -5px; padding: 8px !important"
+          style="margin-top: -6px; padding: 8px !important"
         >
           <i class="fa fa-info-circle" style="font-size: 20px;" />
         </a>
@@ -157,3 +157,11 @@ export default {
   }
 }
 </script>
+
+<style>
+@media (max-width: 768px) {
+  .tenant {
+    display: none;
+  }
+}
+</style>

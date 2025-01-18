@@ -14,6 +14,7 @@
     </a>
     <div
       class="dropdown-menu dropdown-menu-right min-width-300"
+      style="right: 130px;"
       :class="{'show': show}"
     >
       <h5 class="h6 text-center py-10 mb-0 border-b text-uppercase">
