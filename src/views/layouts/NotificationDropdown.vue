@@ -7,10 +7,10 @@
     <a
       href="javascript:void(0)"
       class="btn text-black"
-      style="margin-top: -10px"
+      style="margin-top: -4px; padding: 8px !important"
       @click="toggle"
     >
-      <i class="fa fa-2x fa-bell" />
+      <i class="fa text-[18px] fa-bell" />
     </a>
     <div
       class="dropdown-menu dropdown-menu-right min-width-300"

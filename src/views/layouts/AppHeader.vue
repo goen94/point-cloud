@@ -51,9 +51,9 @@
           href="https://pointhub.gitbook.io/pointhub-documentation"
           target="_blank"
           class="btn text-black"
-          style="margin-top: -10px"
+          style="margin-top: -4px; padding: 8px !important"
         >
-          <i class="fa fa-2x fa-info-circle " />
+          <i class="fa fa-info-circle text-[18px]" />
         </a>
 
         <notification-dropdown />
